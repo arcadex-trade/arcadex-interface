@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { colors } from '../../theme';
 import Spline from '@splinetool/react-spline';
 
@@ -137,48 +137,6 @@ export const Home: React.FC = () => {
     gap: 'clamp(0.5rem, 1.5vw, 0.75rem)',
     position: 'relative',
     zIndex: 10,
-  };
-
-
-  const titleStyles: React.CSSProperties = {
-    fontSize: 'clamp(1.75rem, 5.5vw, 3.5rem)',
-    fontWeight: '600',
-    color: colors.mainTextColor,
-    margin: 0,
-    lineHeight: 1.1,
-    fontFamily: "'Rajdhani', sans-serif",
-    letterSpacing: '0.02em',
-    whiteSpace: 'nowrap',
-  };
-
-  const descriptionStyles: React.CSSProperties = {
-    fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
-    color: colors.secondaryTextColor,
-    lineHeight: 1.6,
-    maxWidth: '600px',
-    margin: 0,
-    fontWeight: '400',
-    fontFamily: "'Rajdhani', sans-serif",
-  };
-
-  const buttonStyles: React.CSSProperties = {
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 'clamp(0.875rem, 2vw, 1.125rem) clamp(2.5rem, 6vw, 4rem)',
-    backgroundColor: colors.mainAccentColor,
-    color: colors.buttonTextColor,
-    fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
-    fontWeight: '600',
-    textDecoration: 'none',
-    borderRadius: 'clamp(30px, 5vw, 50px)',
-    border: 'none',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    marginTop: '1rem',
-    fontFamily: "'Rajdhani', sans-serif",
-    textTransform: 'uppercase' as const,
-    letterSpacing: '0.05em',
   };
 
   const handleSplineMouseDown = (e: any) => {

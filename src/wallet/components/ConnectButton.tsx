@@ -11,8 +11,8 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
   className = '', 
   style = {} 
 }) => {
-  const { connect, disconnect, connected, formattedAddress, address, isLoading, error: walletError } = useWallet();
-  const [localError, setLocalError] = useState<string | null>(null);
+  const { connect, disconnect, connected, formattedAddress, address, isLoading } = useWallet();
+  const [, setLocalError] = useState<string | null>(null);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showWalletSelector, setShowWalletSelector] = useState(false);
   const dashboardRef = useRef<HTMLDivElement>(null);
@@ -111,9 +111,6 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
     );
     return 'Connect Wallet';
   };
-
-  // Use wallet error if available, otherwise use local error
-  const displayError = walletError || localError;
 
   const buttonStyle: React.CSSProperties = {
     border: connected ? '1.5px solid #555555' : 'none', // Slightly thicker outline

@@ -4,7 +4,7 @@ import { colors } from '../../theme';
 export const Cover: React.FC = () => {
   const [depositAmount, setDepositAmount] = useState<string>('');
   const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
-  const [lifetimeEarned, setLifetimeEarned] = useState<number>(0.05); // Example: positive value for dev server
+  const [lifetimeEarned] = useState<number>(0.05); // Example: positive value for dev server
   const [activeTab, setActiveTab] = useState<'covered-calls' | 'puts'>('covered-calls');
   const [actionType, setActionType] = useState<'buy' | 'sell'>('buy');
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
@@ -22,10 +22,6 @@ export const Cover: React.FC = () => {
   const showHowItWorks = viewportHeight >= 750;
   const showStrategyPerformance = viewportHeight >= 650;
   const showStats = viewportHeight >= 550;
-
-  const handleQuickSelect = (amount: string) => {
-    setDepositAmount(amount);
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;

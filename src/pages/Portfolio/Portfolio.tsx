@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { colors } from '../../theme';
 import { PnLChart, PnLDataPoint } from './PnLChart';
@@ -31,8 +31,6 @@ class ChartErrorBoundary extends React.Component<
 }
 
 export const Portfolio: React.FC = () => {
-  const timeframe = 'All'; // Always use All timeframe
-
   // Sample data
   const accountBalance = 0.00;
   const pnl24h = 0.00;

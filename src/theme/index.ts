@@ -25,10 +25,6 @@ export const {
 // Re-export commonly used fonts for convenience
 import { fonts } from './fonts';
 export const {
-  primary: primaryFont,
-  heading: headingFont,
-  body: bodyFont,
-  monospace: monospaceFont,
   weights: fontWeights,
   sizes: fontSizes,
 } = fonts;
