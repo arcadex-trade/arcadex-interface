@@ -1,8 +1,88 @@
 {
-  "hash": "0fe1dab0",
-  "configHash": "e9be1f9c",
-  "lockfileHash": "e3b0c442",
-  "browserHash": "f38327d1",
-  "optimized": {},
-  "chunks": {}
+  "hash": "49a5500d",
+  "configHash": "76488cb0",
+  "lockfileHash": "ebab4edb",
+  "browserHash": "d506f18e",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "344b7508",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "88cf934a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b42d0666",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "381c610e",
+      "needsInterop": false
+    },
+    "@phantom/react-sdk": {
+      "src": "../../node_modules/@phantom/react-sdk/dist/index.mjs",
+      "file": "@phantom_react-sdk.js",
+      "fileHash": "74b9269c",
+      "needsInterop": false
+    },
+    "@splinetool/react-spline": {
+      "src": "../../node_modules/@splinetool/react-spline/dist/react-spline.js",
+      "file": "@splinetool_react-spline.js",
+      "fileHash": "bc8ae388",
+      "needsInterop": false
+    },
+    "lightweight-charts": {
+      "src": "../../node_modules/lightweight-charts/dist/lightweight-charts.development.mjs",
+      "file": "lightweight-charts.js",
+      "fileHash": "ea635423",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "physics-LQPUKR5T": {
+      "file": "physics-LQPUKR5T.js"
+    },
+    "process-QSCV2CYT": {
+      "file": "process-QSCV2CYT.js"
+    },
+    "boolean-DDBMZGXZ": {
+      "file": "boolean-DDBMZGXZ.js"
+    },
+    "howler-BZW7Y3HP": {
+      "file": "howler-BZW7Y3HP.js"
+    },
+    "opentype-UAC3LJHQ": {
+      "file": "opentype-UAC3LJHQ.js"
+    },
+    "ui-FSX56M43": {
+      "file": "ui-FSX56M43.js"
+    },
+    "gaussian-splat-compression-2OE4MBZT": {
+      "file": "gaussian-splat-compression-2OE4MBZT.js"
+    },
+    "chunk-42DVMF4H": {
+      "file": "chunk-42DVMF4H.js"
+    },
+    "chunk-TMELWAXR": {
+      "file": "chunk-TMELWAXR.js"
+    },
+    "chunk-J63SQRER": {
+      "file": "chunk-J63SQRER.js"
+    },
+    "navmesh-KWXWMHIC": {
+      "file": "navmesh-KWXWMHIC.js"
+    },
+    "chunk-PLDDJCW6": {
+      "file": "chunk-PLDDJCW6.js"
+    }
+  }
 }

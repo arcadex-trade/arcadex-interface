@@ -8,12 +8,15 @@ export const Home: React.FC = () => {
   const [isSplineLoading, setIsSplineLoading] = useState(true);
   const splineRef = useRef<any>(null);
   const containerStyles: React.CSSProperties = {
-    position: 'relative',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    minHeight: 'calc(100vh - 4rem)',
     padding: 'clamp(2rem, 5vw, 4rem)',
     paddingTop: 'clamp(1.5rem, 3vw, 2rem)',
     textAlign: 'center',
@@ -26,8 +29,8 @@ export const Home: React.FC = () => {
     position: 'absolute',
     top: '10%',
     right: '5%',
-    width: '400px',
-    height: '400px',
+    width: 'clamp(400px, 50vw, 800px)',
+    height: 'clamp(400px, 50vh, 800px)',
     background: 'linear-gradient(135deg, rgba(255, 107, 90, 0.15) 0%, rgba(224, 40, 74, 0.15) 100%)',
     borderRadius: '50%',
     filter: 'blur(100px)',
@@ -38,8 +41,8 @@ export const Home: React.FC = () => {
     position: 'absolute',
     bottom: '10%',
     right: '10%',
-    width: '300px',
-    height: '300px',
+    width: 'clamp(300px, 40vw, 700px)',
+    height: 'clamp(300px, 40vh, 700px)',
     background: 'linear-gradient(135deg, rgba(224, 40, 74, 0.15) 0%, rgba(255, 107, 90, 0.15) 100%)',
     borderRadius: '50%',
     filter: 'blur(100px)',
@@ -50,8 +53,8 @@ export const Home: React.FC = () => {
     position: 'absolute',
     top: '20%',
     left: '5%',
-    width: '350px',
-    height: '350px',
+    width: 'clamp(350px, 45vw, 750px)',
+    height: 'clamp(350px, 45vh, 750px)',
     background: 'radial-gradient(circle, rgba(224, 40, 74, 0.15) 0%, transparent 70%)',
     borderRadius: '50%',
     filter: 'blur(80px)',
@@ -62,8 +65,8 @@ export const Home: React.FC = () => {
     position: 'absolute',
     bottom: '5%',
     left: '15%',
-    width: '280px',
-    height: '280px',
+    width: 'clamp(280px, 35vw, 600px)',
+    height: 'clamp(280px, 35vh, 600px)',
     background: 'radial-gradient(circle, rgba(255, 107, 90, 0.15) 0%, transparent 70%)',
     borderRadius: '50%',
     filter: 'blur(80px)',
@@ -75,8 +78,8 @@ export const Home: React.FC = () => {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: '500px',
-    height: '500px',
+    width: 'clamp(500px, 60vw, 1000px)',
+    height: 'clamp(500px, 60vh, 1000px)',
     background: 'radial-gradient(circle, rgba(224, 40, 74, 0.08) 0%, transparent 70%)',
     borderRadius: '50%',
     filter: 'blur(120px)',
@@ -85,11 +88,10 @@ export const Home: React.FC = () => {
 
   const splineContainerStyles: React.CSSProperties = {
     position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-48.75%, -44%) scale(1.05)',
-    width: '100%',
-    height: '100%',
+    top: 0,
+    left: 0,
+    width: '100vw',
+    height: '100vh',
     zIndex: 0,
     pointerEvents: 'auto',
     userSelect: 'none',
@@ -117,11 +119,12 @@ export const Home: React.FC = () => {
     position: 'fixed',
     top: '80%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '200px',
-    height: '80px',
+    transform: 'translate(calc(-50% - 1.5vw), calc(-50% - 8vh))',
+    width: 'clamp(150px, 15vw, 250px)',
+    height: 'clamp(60px, 6vh, 100px)',
     backgroundColor: 'transparent',
     border: 'none',
+    outline: 'none',
     cursor: 'pointer',
     zIndex: 10,
   };
@@ -220,7 +223,7 @@ export const Home: React.FC = () => {
       {/* Spline 3D Background */}
       <div style={splineContainerStyles}>
         <Spline
-          scene="https://prod.spline.design/vtpcM05F3xx32Nws/scene.splinecode"
+          scene="/scene.splinecode"
           onLoad={handleSplineLoad}
           onMouseDown={handleSplineMouseDown}
         />

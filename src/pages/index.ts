@@ -5,4 +5,5 @@ export { Portfolio } from './Portfolio';
 export { Rewards } from './Rewards';
 export { Referral } from './Referral';
 export { Docs } from './Docs';
+export { ComingSoon } from './ComingSoon';
 

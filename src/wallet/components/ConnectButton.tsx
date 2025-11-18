@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { colors } from '../../theme';
+import { colors, fonts } from '../../theme';
 import { useWallet } from '../hooks/useWallet';
 
 interface ConnectButtonProps {
@@ -99,8 +99,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         {/* Address - moved more to the right, showing more characters */}
         <span style={{ 
-          fontSize: '14px', // Match the smaller button size
-          fontWeight: '600' // Bolder text
+          ...fonts.button,
         }}>
           {formattedAddress || 'Connected'}
         </span>
@@ -119,8 +118,8 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
   const buttonStyle: React.CSSProperties = {
     border: connected ? '1.5px solid #555555' : 'none', // Slightly thicker outline
     borderRadius: '50px', // Very rounded, oval-like edges
-    fontFamily: 'system-ui, -apple-system, sans-serif',
-    fontWeight: connected ? '400' : '600', // Thicker when disconnected
+    ...fonts.button,
+    fontWeight: connected ? fonts.weights.regular : fonts.weights.semibold, // Thicker when disconnected
     cursor: isLoading ? 'not-allowed' : 'pointer',
     transition: 'all 0.2s ease',
     display: 'inline-flex',
@@ -128,7 +127,6 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
     justifyContent: 'center',
     textAlign: 'center',
     padding: '8px 16px', // Same size for both states
-    fontSize: '14px', // 30% smaller font
     opacity: isLoading ? 0.6 : 1,
     backgroundColor: connected ? 'transparent' : colors.mainAccentColor, // Transparent when connected, blue when disconnected
     color: connected ? colors.mainTextColor : colors.buttonTextColor, // White when connected, background color when disconnected
@@ -196,8 +194,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
           }}>
             <h3 style={{ 
               color: 'white', 
-              fontSize: '16px', 
-              fontWeight: '600',
+              ...fonts.subheader,
               margin: 0 
             }}>
               Connect a wallet on Solana to continue
@@ -210,6 +207,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
                 color: colors.secondaryTextColor,
                 cursor: 'pointer',
                 fontSize: '24px',
+                fontWeight: fonts.weights.light,
                 padding: '2px',
                 position: 'absolute',
                 top: '8px',
@@ -265,9 +263,9 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
                     </defs>
                   </svg>
                 </div>
-                <span style={{ color: 'white', fontSize: '14px', fontWeight: '500' }}>Phantom</span>
+                <span style={{ color: 'white', ...fonts.button }}>Phantom</span>
               </div>
-              <span style={{ color: colors.secondaryTextColor, fontSize: '12px' }}>Detected</span>
+              <span style={{ color: colors.secondaryTextColor, ...fonts.caption }}>Detected</span>
             </button>
 
             {/* MetaMask */}
@@ -317,9 +315,9 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
                       M102.113,123.072l-23.084,13.8v-12.495l2.067-7.566C81.096,116.811,102.113,123.072,102.113,123.072z"/>
                   </svg>
                 </div>
-                <span style={{ color: 'white', fontSize: '14px', fontWeight: '500' }}>MetaMask</span>
+                <span style={{ color: 'white', ...fonts.button }}>MetaMask</span>
               </div>
-              <span style={{ color: colors.secondaryTextColor, fontSize: '12px' }}>Coming Soon</span>
+              <span style={{ color: colors.secondaryTextColor, ...fonts.caption }}>Coming Soon</span>
             </div>
           </div>
         </div>
@@ -373,7 +371,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
             {/* Wallet ID */}
             <span style={{ 
               color: 'white', 
-              fontSize: '14px'
+              ...fonts.button
             }}>
               {formattedAddress || address}
             </span>
@@ -397,23 +395,6 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
             </button>
           </div>
 
-          {/* Total Funds Box */}
-          <div style={{
-            width: '90%',
-            border: '1px solid #444', // Lighter grey thin line
-            borderRadius: '0px', // Harsh 90 degree edges
-            padding: '12px', // Reduced from 16px
-            marginBottom: '10px', // Reduced from 12px
-            backgroundColor: 'transparent'
-          }}>
-            <div style={{ color: colors.secondaryTextColor, fontSize: '12px', marginBottom: '6px' }}> {/* Reduced from 8px */}
-              Total funds
-            </div>
-            <div style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}>
-              Balance Coming Soon
-            </div>
-          </div>
-
           {/* View on Explorer */}
           <button 
             onClick={() => window.open(`https://explorer.solana.com/address/${address}`, '_blank')}
@@ -422,7 +403,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
               backgroundColor: 'transparent',
               border: 'none',
               color: 'white', // Changed to white to make it clear it's a button
-              fontSize: '14px',
+              ...fonts.button,
               cursor: 'pointer',
               textAlign: 'left',
               padding: '10px 0', // Reduced from 12px
@@ -447,7 +428,7 @@ export const ConnectButton: React.FC<ConnectButtonProps> = ({
               backgroundColor: 'transparent',
               border: 'none',
               color: 'white', // Changed to white to make it clear it's a button
-              fontSize: '14px',
+              ...fonts.button,
               cursor: 'pointer',
               textAlign: 'left',
               padding: '10px 0', // Reduced from 12px

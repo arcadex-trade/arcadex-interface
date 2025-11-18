@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ConnectButton } from '../../../wallet';
-import { colors } from '../../../theme';
+import { colors, fonts } from '../../../theme';
 
 export interface NavBarProps {
   className?: string;
+  transparent?: boolean;
 }
 
-export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
+export const NavBar: React.FC<NavBarProps> = ({ className = '', transparent = false }) => {
   const location = useLocation();
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -84,18 +85,15 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
         alignItems: 'center',
         padding: '0 clamp(1rem, 3vw, 2rem)',
         height: 'clamp(3.5rem, 8vh, 4rem)',
-        backgroundColor: colors.mainBackgroundColor,
+        backgroundColor: transparent ? 'transparent' : colors.mainBackgroundColor,
         flexShrink: 0,
         zIndex: 1000,
       };
 
   const logoStyles: React.CSSProperties = {
-    fontSize: '1.5rem',
-    fontWeight: '600',
+    ...fonts.logo,
     color: colors.mainTextColor,
     margin: 0,
-    letterSpacing: '0.08em',
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
     textTransform: 'uppercase',
     background: `linear-gradient(90deg, ${colors.mainTextColor} 0%, ${colors.mainAccentColor} 100%)`,
     WebkitBackgroundClip: 'text',
@@ -120,8 +118,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
       const navLinkStyles = (isActive: boolean, opacity: number = 1): React.CSSProperties => ({
         color: isActive ? colors.mainAccentColor : colors.mainTextColor,
         textDecoration: 'none',
-        fontSize: '0.95rem',
-        fontWeight: '500',
+        ...fonts.navLink,
         padding: '0.5rem 0',
         transition: 'color 0.2s ease, opacity 0.3s ease',
         cursor: 'pointer',
@@ -135,8 +132,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
         backgroundColor: 'transparent',
         border: 'none',
         color: colors.mainTextColor,
-        fontSize: '0.95rem',
-        fontWeight: '500',
+        ...fonts.navLink,
         padding: '0.5rem 0',
         cursor: 'pointer',
         transition: 'color 0.2s ease, opacity 0.3s ease',
@@ -161,7 +157,7 @@ export const NavBar: React.FC<NavBarProps> = ({ className = '' }) => {
     display: 'block',
     color: colors.mainTextColor,
     textDecoration: 'none',
-    fontSize: '0.9rem',
+    ...fonts.dropdown,
     padding: '0.5rem 1rem',
     transition: 'background-color 0.2s ease',
   };
