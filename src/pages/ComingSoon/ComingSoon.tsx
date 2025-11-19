@@ -249,20 +249,6 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onAccessGranted }) => {
     };
   }, [isPopupOpen]);
 
-  const headerLogoStyles: React.CSSProperties = {
-    width: 'clamp(70px, 12vw, 120px)',
-    height: 'clamp(70px, 12vw, 120px)',
-  };
-
-  const headerTextStyles: React.CSSProperties = {
-    ...fonts.pageHeader,
-    margin: 0,
-    background: `linear-gradient(90deg, rgba(255, 210, 210, 1) 0%, ${colors.mainAccentColor} 75%)`,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-  };
-
   const textStyles: React.CSSProperties = {
     ...fonts.bodyText,
     color: 'rgba(255, 255, 255, 0.8)',
@@ -329,7 +315,7 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onAccessGranted }) => {
         ))}
       </div>
 
-      {/* Header with logo and name */}
+      {/* Header with logo banner */}
       <div style={{
         position: 'fixed',
         top: 0,
@@ -338,20 +324,17 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onAccessGranted }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 'clamp(0.5rem, 1vw, 0.75rem)',
         padding: 'clamp(1.5rem, 3vh, 2.5rem) clamp(2rem, 4vw, 3rem)',
         zIndex: 100,
       }}>
         <img 
           src="/icons/Alogo.png" 
           alt="Arcadex Logo" 
-          style={headerLogoStyles}
+          style={{
+            width: 'clamp(200px, 30vw, 500px)',
+            height: 'auto',
+          }}
         />
-        <h1 
-          style={{...headerTextStyles, lineHeight: '1', marginTop: '-0.3rem'}}
-        >
-          arcadex
-        </h1>
       </div>
 
       {/* Left side content - Follow button and description */}
