@@ -232,6 +232,15 @@ export const Home: React.FC = () => {
       <div style={gradientShape5Styles}></div>
 
       <div style={heroSectionStyles}>
+        <img 
+          src="/icons/Alogo.png" 
+          alt="ArcadeX Logo" 
+          style={{
+            width: 'clamp(200px, 25vw, 400px)',
+            height: 'auto',
+            zIndex: 10,
+          }}
+        />
       </div>
     </div>
   );
