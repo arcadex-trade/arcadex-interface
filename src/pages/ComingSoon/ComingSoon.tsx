@@ -343,7 +343,7 @@ export const ComingSoon: React.FC<ComingSoonProps> = ({ onAccessGranted }) => {
         zIndex: 100,
       }}>
         <img 
-          src="/icons/3dtransparentlogo.png" 
+          src="/icons/Alogo.png" 
           alt="Arcadex Logo" 
           style={headerLogoStyles}
         />
